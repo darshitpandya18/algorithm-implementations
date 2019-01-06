@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-@author: Darshit Pandya (219759996)
+@author: Darshit Pandya
 @Module: Graph Partitioning Problem with branch and bound
 
 """
-
 
 input_matrix, best_solution_partition = list() , 0        
 lowerbound, upperbound = 0, 0
 levels = 0
 row_columns = 0
 coverage_stack = []
+
 def vertical_lower_calc(fixed_elements_list):
     '''
     Step 1: sum smallest n/2 elements of columns
@@ -94,11 +94,8 @@ def build(k):
     while not coverage_stack == []:
         if k<row_columns//2:
             build(k+1)
-    
-    
-
-
-def GPP(input_matrix):
+  
+def graph_partitioning_bb(input_matrix):
     global row_columns
     row_columns = len(input_matrix)
     upper_bound_compute()
@@ -111,36 +108,13 @@ def GPP(input_matrix):
 
 if __name__ == '__main__':
                 
-#        input_matrix.append([0, 3, 4, 10, 32, 5, 15, 20])
-#        input_matrix.append([3, 0, 25, 8, 7, 12, 6, 9])
-#        input_matrix.append([4, 25, 0, 19, 13, 8, 10, 11])
-#        input_matrix.append([10, 8, 19, 0, 42, 4, 28, 15])
-#        input_matrix.append([32, 7, 13, 42, 0, 16, 70, 8])
-#        input_matrix.append([5, 12, 8, 4, 16, 0, 10, 9])
-#        input_matrix.append([15, 6, 10, 28, 70, 10, 0, 14])
-#        input_matrix.append([20, 9, 11, 15, 8, 9, 14, 0])
+        input_matrix.append([0, 3, 4, 10, 32, 5, 15, 20])
+        input_matrix.append([3, 0, 25, 8, 7, 12, 6, 9])
+        input_matrix.append([4, 25, 0, 19, 13, 8, 10, 11])
+        input_matrix.append([10, 8, 19, 0, 42, 4, 28, 15])
+        input_matrix.append([32, 7, 13, 42, 0, 16, 70, 8])
+        input_matrix.append([5, 12, 8, 4, 16, 0, 10, 9])
+        input_matrix.append([15, 6, 10, 28, 70, 10, 0, 14])
+        input_matrix.append([20, 9, 11, 15, 8, 9, 14, 0])  
         
-        input_matrix.append([0, 14, 4, 10, 20, 15])
-        input_matrix.append([14, 0 , 5, 8, 7, 12])
-        input_matrix.append([4, 5, 0, 9, 17, 4])
-        input_matrix.append([10, 8, 9, 0, 4, 25])
-        input_matrix.append([20, 7, 17, 4, 0, 6])
-        input_matrix.append([15, 12, 4, 25, 6, 0])
-        
-        GPP(input_matrix)
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        graph_partitioning_bb(input_matrix)
