@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @author: Darshit Pandya
-@Module: Graph Partitioning Problem with branch and bound
+@Module: Graph Partitioning Problem using branch & bound;backtracking
 
 """
 
